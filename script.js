@@ -30,3 +30,43 @@ buttons.forEach(function (button) {
     };
 
 });
+
+document
+    .getElementById("projectsShortcut")
+    .onclick = function(){
+
+    showPage("projectsPage");
+
+    buttons.forEach(function(btn){
+
+        btn.classList.remove("active");
+
+    });
+
+    document
+        .querySelector(
+            '[data-page="projectsPage"]'
+        )
+        .classList.add("active");
+
+};
+
+document
+    .getElementById("contactShortcut")
+    .onclick = function(){
+
+    showPage("contactPage");
+
+    buttons.forEach(function(btn){
+
+        btn.classList.remove("active");
+
+    });
+
+    document
+        .querySelector(
+            '[data-page="contactPage"]'
+        )
+        .classList.add("active");
+
+};
