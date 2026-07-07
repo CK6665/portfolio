@@ -4,92 +4,72 @@
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Chengbo's Portfolio</title>
+    <title>Chengbo | Portfolio</title>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-    <aside class="sidebar">
+    <!-- ===========================
+         Navigation
+    ============================ -->
 
-        <div class="profile">
+    <header class="navbar">
 
-            <div class="avatar">
+        <div class="logo">
 
-                <span>C</span>
-
-            </div>
-
-            <h2>Chengbo</h2>
-
-            <p class="role">
-                Portfolio
-            </p>
-
-            <div class="status">
-
-                <span class="dot occupied"></span>
-
-                Occupied
-
-            </div>
-
+            Chengbo
         </div>
 
-        <button id="themeToggle" class="theme-button">
+        <nav class="nav-links">
 
-            🌙 Dark Mode
+            <a href="#home">Home</a>
 
-        </button>
+            <a href="#about">About</a>
 
-        <nav class="navigation">
+            <a href="#projects">Projects</a>
 
-            <button class="nav-button active" data-page="homePage">
+            <a href="#skills">Skills</a>
 
-                🏠 Home
+            <a href="#timeline">Timeline</a>
 
-            </button>
-
-            <button class="nav-button" data-page="aboutPage">
-
-                👤 About
-
-            </button>
-
-            <button class="nav-button" data-page="projectsPage">
-
-                💻 Projects
-
-            </button>
-
-            <button class="nav-button" data-page="skillsPage">
-
-                ⭐ Skills
-
-            </button>
-
-            <button class="nav-button" data-page="contactPage">
-
-                📞 Contact
-
-            </button>
+            <a href="#contact">Contact</a>
 
         </nav>
 
-    </aside>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
 
-    <main class="main-content">
+            🌙
 
-        <!-- HOME -->
+        </button>
 
-        <section id="homePage">
+    </header>
 
-            <div class="hero">
+    <!-- ===========================
+         Main
+    ============================ -->
+
+    <main>
+
+        <!-- =======================
+             Hero
+        ======================== -->
+
+        <section id="home" class="hero">
+
+            <div class="hero-content">
 
                 <p class="greeting">
 
@@ -103,25 +83,42 @@
 
                 </h1>
 
+                <h2>
+
+                    Computer Science Student
+
+                </h2>
+
                 <p class="hero-description">
 
-                    Current Computer Science Student
+                    Building modern software while learning
+                    full-stack web development.
 
                 </p>
 
                 <div class="hero-buttons">
 
-                    <button class="primary-btn" id="projectsShortcut">
+                    <a href="#projects" class="primary-btn">
 
                         View Projects
 
-                    </button>
+                    </a>
 
-                    <button class="secondary-btn" id="contactShortcut">
+                    <a href="assets/resume.pdf" class="secondary-btn" download>
 
-                        Contact Me
+                        Download Resume
 
-                    </button>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <div class="profile-placeholder">
+
+                    BO
 
                 </div>
 
@@ -129,63 +126,64 @@
 
         </section>
 
-        <!-- ABOUT -->
+        <!-- =======================
+             About
+        ======================== -->
 
-        <section id="aboutPage">
+        <section id="about">
 
-            <div class="card">
+            <h2>
 
-                <h1 class="section-title">
+                About Me
 
-                    About
+            </h2>
 
-                </h1>
+            <p>
 
-                <p>
+                <!-- Write this later -->
 
-                </p>
-
-            </div>
+            </p>
 
         </section>
 
-        <!-- PROJECTS -->
+        <!-- =======================
+             Projects
+        ======================== -->
 
-        <section id="projectsPage">
+        <section id="projects">
 
-            <h1 class="section-title">
+            <h2>
 
-                Projects
+                Featured Projects
 
-            </h1>
+            </h2>
 
             <div class="projects-grid">
 
-                <!-- Project Card -->
-
-                <div class="project-card">
+                <article class="project-card">
 
                     <div class="project-image">
 
-                        Screenshot
+                        Website Screenshot
 
                     </div>
 
                     <div class="project-content">
 
-                        <h2>
+                        <h3>
 
                             Portfolio Website
 
-                        </h2>
+                        </h3>
 
                         <p>
 
-                            A modern portfolio website built while learning frontend development.
+                            A modern portfolio website built from scratch while
+                            learning HTML, CSS, JavaScript and Git.
 
                         </p>
 
-                        <div class="tech-stack">
+                        <div class="project-tags">
 
                             <span>HTML</span>
 
@@ -193,19 +191,15 @@
 
                             <span>JavaScript</span>
 
+                            <span>Git</span>
+
                         </div>
 
-                        <div class="project-buttons">
+                        <div class="project-links">
 
-                            <a href="#" class="project-btn">
+                            <a href="https://github.com/ck6665/portfolio" target="_blank" class="project-button">
 
-                                GitHub
-
-                            </a>
-
-                            <a href="#" class="project-btn primary">
-
-                                Live Demo
+                                View on GitHub
 
                             </a>
 
@@ -213,47 +207,67 @@
 
                     </div>
 
-                </div>
+                </article>
 
             </div>
 
         </section>
 
-        <!-- SKILLS -->
+        <!-- =======================
+             Skills
+        ======================== -->
 
-        <section id="skillsPage">
+        <section id="skills">
 
-            <div class="card">
+            <h2>
 
-                <h1 class="section-title">
+                Skills
 
-                    Skills
+            </h2>
 
-                </h1>
+            <div class="skills-placeholder">
 
-                <p>
-
-                </p>
+                Coming Soon...
 
             </div>
 
         </section>
 
-        <!-- CONTACT -->
+        <!-- =======================
+             Timeline
+        ======================== -->
 
-        <section id="contactPage">
+        <section id="timeline">
 
-            <div class="card">
+            <h2>
 
-                <h1 class="section-title">
+                Timeline
 
-                    Contact
+            </h2>
 
-                </h1>
+            <div class="timeline-placeholder">
 
-                <p>
+                Coming Soon...
 
-                </p>
+            </div>
+
+        </section>
+
+        <!-- =======================
+             Contact
+        ======================== -->
+
+        <section id="contact">
+
+            <h2>
+
+                Contact
+
+            </h2>
+
+            <div class="contact-placeholder">
+
+                Coming Soon...
 
             </div>
 
@@ -261,7 +275,23 @@
 
     </main>
 
-    <script src="script.js"></script>
+    <!-- ===========================
+         Footer
+    ============================ -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Bo. All rights reserved.
+
+        </p>
+
+    </footer>
+
+    <!-- JavaScript -->
+
+    <script src="js/script.js"></script>
 
 </body>
 
