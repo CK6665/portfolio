@@ -114,3 +114,75 @@ revealElements.forEach(section => {
     observer.observe(section);
 
 });
+
+// ==========================================
+// Animated Skill Bars
+// ==========================================
+
+const skillBars = document.querySelectorAll(".skill-progress");
+
+const skillObserver = new IntersectionObserver(
+
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                const level =
+                    entry.target.dataset.level;
+
+                entry.target.style.width =
+                    level + "%";
+
+            }
+
+        });
+
+    },
+
+    {
+
+        threshold: 0.4
+
+    }
+
+);
+
+skillBars.forEach(bar => {
+
+    skillObserver.observe(bar);
+
+});
+
+// ==========================================
+// Back To Top Button
+// ==========================================
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 500) {
+
+        backToTop.classList.add("show");
+
+    } else {
+
+        backToTop.classList.remove("show");
+
+    }
+
+});
+
+backToTop.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+});

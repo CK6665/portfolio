@@ -833,6 +833,8 @@ footer {
 
 .skill-progress {
 
+    width: 0;
+
     height: 100%;
 
     background: linear-gradient(90deg,
@@ -841,7 +843,7 @@ footer {
 
     border-radius: 999px;
 
-    transition: width .6s ease;
+    transition: width 1.2s ease;
 
 }
 
@@ -1176,5 +1178,65 @@ footer {
     opacity: 1;
 
     transform: translateY(0);
+
+}
+
+/* ==========================================
+   BACK TO TOP
+========================================== */
+
+.back-to-top {
+
+    position: fixed;
+
+    right: 35px;
+
+    bottom: 35px;
+
+    width: 55px;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    box-shadow: var(--shadow);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(20px);
+
+    transition: .3s;
+
+    z-index: 999;
+
+}
+
+.back-to-top.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+}
+
+.back-to-top:hover {
+
+    background: var(--primary-hover);
+
+    transform: translateY(-4px);
 
 }
