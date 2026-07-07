@@ -1240,3 +1240,59 @@ footer {
     transform: translateY(-4px);
 
 }
+
+/* ==========================================
+   MOBILE NAVIGATION
+========================================== */
+
+.menu-toggle {
+
+    display: none;
+
+    background: none;
+
+    border: none;
+
+    font-size: 30px;
+
+    color: var(--text);
+
+    cursor: pointer;
+
+}
+
+@media (max-width:768px) {
+
+    .navbar {
+
+        flex-wrap: wrap;
+
+    }
+
+    .menu-toggle {
+
+        display: block;
+
+    }
+
+    .nav-links {
+
+        display: none;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        margin-top: 20px;
+
+        gap: 18px;
+
+    }
+
+    .nav-links.open {
+
+        display: flex;
+
+    }
+
+}

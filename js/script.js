@@ -186,3 +186,29 @@ backToTop.addEventListener("click", () => {
     });
 
 });
+
+// ==========================================
+// Mobile Menu
+// ==========================================
+
+const menuToggle = document.getElementById("menuToggle");
+
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", () => {
+
+    navMenu.classList.toggle("open");
+
+});
+
+// Close menu after clicking a link
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navMenu.classList.remove("open");
+
+    });
+
+});
