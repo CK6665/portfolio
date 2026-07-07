@@ -1,29 +1,37 @@
+// ================================
+// Navigation
+// ================================
+
+const pages = document.querySelectorAll(".main-content section");
+const navButtons = document.querySelectorAll(".nav-button");
+
 function showPage(pageId) {
 
-    const pages = document.querySelectorAll(".main-content section");
-
+    // Hide every page
     pages.forEach(function (page) {
-
         page.style.display = "none";
-
     });
 
+    // Show selected page
     document.getElementById(pageId).style.display = "block";
+
+    // Update active navigation button
+    navButtons.forEach(function (button) {
+        button.classList.remove("active");
+    });
+
+    document
+        .querySelector(`[data-page="${pageId}"]`)
+        .classList.add("active");
 }
 
-const buttons = document.querySelectorAll(".nav-button");
+// ================================
+// Sidebar Navigation
+// ================================
 
-buttons.forEach(function (button) {
+navButtons.forEach(function (button) {
 
     button.onclick = function () {
-
-        buttons.forEach(function (btn) {
-
-            btn.classList.remove("active");
-
-        });
-
-        button.classList.add("active");
 
         showPage(button.dataset.page);
 
@@ -31,42 +39,74 @@ buttons.forEach(function (button) {
 
 });
 
+// ================================
+// Hero Buttons
+// ================================
+
 document
     .getElementById("projectsShortcut")
-    .onclick = function(){
+    .onclick = function () {
 
-    showPage("projectsPage");
+        showPage("projectsPage");
 
-    buttons.forEach(function(btn){
-
-        btn.classList.remove("active");
-
-    });
-
-    document
-        .querySelector(
-            '[data-page="projectsPage"]'
-        )
-        .classList.add("active");
-
-};
+    };
 
 document
     .getElementById("contactShortcut")
-    .onclick = function(){
+    .onclick = function () {
 
-    showPage("contactPage");
+        showPage("contactPage");
 
-    buttons.forEach(function(btn){
+    };
 
-        btn.classList.remove("active");
+// ================================
+// Dark Mode
+// ================================
 
-    });
+const themeButton = document.getElementById("themeToggle");
 
-    document
-        .querySelector(
-            '[data-page="contactPage"]'
-        )
-        .classList.add("active");
+function updateThemeButton() {
+
+    if (document.body.classList.contains("dark")) {
+
+        themeButton.textContent = "☀️ Light Mode";
+
+    } else {
+
+        themeButton.textContent = "🌙 Dark Mode";
+
+    }
+
+}
+
+if (localStorage.getItem("theme") === "dark") {
+
+    document.body.classList.add("dark");
+
+}
+
+updateThemeButton();
+
+themeButton.onclick = function () {
+
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+
+        localStorage.setItem("theme", "dark");
+
+    } else {
+
+        localStorage.setItem("theme", "light");
+
+    }
+
+    updateThemeButton();
 
 };
+
+// ================================
+// Default Page
+// ================================
+
+showPage("homePage");
